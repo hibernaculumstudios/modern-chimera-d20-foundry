@@ -1,0 +1,11 @@
+package-lock.json
+dist/
+artifacts/
+.local/
+coverage/
+test-results/
+playwright-report/
+AGENTS.md
+.claude/
+.codex/
+.agents/

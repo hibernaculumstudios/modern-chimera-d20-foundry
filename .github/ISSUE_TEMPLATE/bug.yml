@@ -1,0 +1,16 @@
+name: Bug report
+description: Report a reproducible system problem
+body:
+  - type: input
+    id: versions
+    attributes:
+      label: Foundry and system versions
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps, expected behavior, and actual behavior
+      description: Include user role and whether the problem occurs with other modules disabled. Omit private world data and credentials.
+    validations:
+      required: true

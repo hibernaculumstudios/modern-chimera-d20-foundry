@@ -1,0 +1,16 @@
+{
+  "id": "modern-chimera-d20",
+  "title": "ModernChimeraD20",
+  "description": "Development foundation for the ModernChimeraD20 tabletop roleplaying game.",
+  "version": "0.1.0-dev.1",
+  "compatibility": { "minimum": "14.366", "verified": "14.368", "maximum": "14" },
+  "authors": [{ "name": "Hibernaculum Studios", "url": "https://github.com/hibernaculumstudios" }],
+  "esmodules": ["modern-chimera-d20.js"],
+  "styles": ["styles/system.css"],
+  "languages": [{ "lang": "en", "name": "English", "path": "lang/en.json" }],
+  "documentTypes": { "Actor": { "character": {} } },
+  "packs": [],
+  "url": "https://github.com/hibernaculumstudios/modern-chimera-d20-foundry",
+  "license": "LICENSE",
+  "readme": "README.md"
+}

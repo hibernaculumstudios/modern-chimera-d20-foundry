@@ -1,0 +1,17 @@
+.modern-chimera-d20 .profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.modern-chimera-d20 .profile label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modern-chimera-d20 textarea {
+  resize: vertical;
+  min-height: 10rem;
+}

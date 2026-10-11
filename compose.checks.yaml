@@ -1,0 +1,19 @@
+name: mcd20-checks
+services:
+  checks:
+    image: node:22.18.0-bookworm@sha256:3266bc9e8bee1acc8a77386eefaf574987d2729b8c5ec35b0dbd6ddbc40b0ce2
+    working_dir: /workspace
+    volumes:
+      - ./:/source:ro
+    command:
+      - sh
+      - -ec
+      - |
+        mkdir -p /workspace
+        cd /source
+        git -c safe.directory=/source ls-files -z | tar --null -T - -cf - | tar -xf - -C /workspace
+        cd /workspace
+        git init -q
+        git add .
+        npm ci
+        npm run check

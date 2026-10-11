@@ -1,0 +1,15 @@
+<section class='profile'>
+  <label>
+    <span>{{localize 'MCD20.Character.Name'}}</span>
+    <input name='name' type='text' value='{{actor.name}}' {{disabled (not editable)}} />
+  </label>
+  <label>
+    <span>{{localize 'MCD20.Character.Biography'}}</span>
+    <textarea
+      name='system.biography'
+      rows='10'
+      {{disabled (not editable)}}
+    >{{system.biography}}</textarea>
+  </label>
+  <p class='hint'>{{localize 'MCD20.Character.Foundation'}}</p>
+</section>

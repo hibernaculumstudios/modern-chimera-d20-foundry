@@ -1,0 +1,42 @@
+name: mcd20-dev
+services:
+  foundry:
+    image: ghcr.io/felddy/foundryvtt:14.368.0@sha256:8ec86078b0c461644d896cbe3a9f9bcae7d1ce8dc8d91eeb0b0f1d94c91c072f
+    hostname: mcd20-local
+    ports:
+      - '127.0.0.1:30020:30000'
+    environment:
+      FOUNDRY_VERSION: '14.368'
+      FOUNDRY_TELEMETRY: 'false'
+      FOUNDRY_UPNP: 'false'
+      CONTAINER_PRESERVE_CONFIG: 'true'
+    secrets:
+      - source: foundry_config
+        target: config.json
+    volumes:
+      - type: bind
+        source: ./.local/data
+        target: /data
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./dist
+        target: /data/Data/systems/modern-chimera-d20
+        read_only: true
+        bind:
+          create_host_path: false
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:30000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 120s
+secrets:
+  foundry_config:
+    file: ./.local/config.json

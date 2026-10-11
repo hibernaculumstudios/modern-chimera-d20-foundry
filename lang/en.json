@@ -1,0 +1,11 @@
+{
+  "TYPES": { "Actor": { "character": "Character" } },
+  "MCD20": {
+    "Sheet": { "Title": "ModernChimeraD20 Character" },
+    "Character": {
+      "Name": "Name",
+      "Biography": "Biography",
+      "Foundation": "Character profile. Game mechanics are still in design."
+    }
+  }
+}
